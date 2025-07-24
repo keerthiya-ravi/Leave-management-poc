@@ -1,0 +1,5 @@
+@OData.publish: true
+service binding ZSB_LEAVE
+  for ZSD_LEAVE
+  using OData V2 UI
+  published;

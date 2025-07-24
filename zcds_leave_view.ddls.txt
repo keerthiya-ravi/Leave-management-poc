@@ -1,0 +1,27 @@
+@AbapCatalog.sqlViewName: 'ZV_LEAVE'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Leave View CDS'
+@OData.publish: true
+
+@UI.headerInfo: {
+  typeName: 'Leave Record',
+  typeNamePlural: 'Leave Records',
+  title: { type: #STANDARD, value: 'emp_id' }
+}
+
+define view ZCDS_LeaveView as select from zleave_data {
+  key emp_id,
+  key from_date,
+
+  @UI.lineItem: [{ position: 10 }]
+  leave_type,
+
+  @UI.lineItem: [{ position: 20 }]
+  to_date,
+
+  @UI.lineItem: [{ position: 30 }]
+  status,
+
+  @UI.selectionField: [{ position: 10 }]
+  status
+}

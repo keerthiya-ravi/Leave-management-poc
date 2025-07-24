@@ -1,0 +1,4 @@
+@EndUserText.label: 'Leave Data Service'
+define service ZSD_LEAVE {
+  expose ZCDS_LeaveView;
+}

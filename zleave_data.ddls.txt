@@ -1,0 +1,15 @@
+@EndUserText.label : 'Leave Data Table'
+@AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #ALLOWED
+
+define table zleave_data {
+  key client      : abap.clnt not null;
+  key emp_id      : abap.char(10) not null;
+  key from_date   : abap.dats not null;
+
+  to_date         : abap.dats;
+  leave_type      : abap.char(10);
+  status          : abap.char(1); // P=Pending, A=Approved, R=Rejected
+}
